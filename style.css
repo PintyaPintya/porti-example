@@ -29,9 +29,13 @@ body {
 
 /*header *********************************************************/
 
+header, main, section{
+  padding-left: 10px;
+}
 
 header {
-  width: 70%;
+  /* width: 70%; */
+  max-width: 1386px;
   height: 100px;
   margin: auto;
   display: flex;
@@ -102,7 +106,7 @@ main > img{
 }
 main > div {
   position: relative; 
-  width: 70%;
+  max-width: 1386px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -163,7 +167,7 @@ main > div > div:last-child p{
 
 /* Featured Works *************************************************/
 .works-heading{
-  width: 70%;
+  max-width: 1386px;
   margin: auto;
   margin-bottom: 80px;
 }
@@ -187,7 +191,7 @@ main > div > div:last-child p{
 
 /* works ************************************************************/
 .works {
-  width: 70%;
+  max-width: 1386px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -299,4 +303,108 @@ main > div > div:last-child p{
 
 .green-bg .marquee-content {
   animation: marquee-green 20s linear infinite; /* Adjust speed here */
+}
+
+@media (max-width: 1200px) {
+  header {
+    padding: 15px;
+    gap: 20px;
+  }
+
+
+
+  main > div > div:last-child h2 {
+    font-size: 56px;
+  }
+
+  .caption h1 {
+    font-size: 240px;
+  }
+
+  .works-heading > div:first-child {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .works-heading > div:first-child h2 {
+    font-size: 60px;
+  }
+
+  .works-heading > div:first-child p {
+    max-width: none;
+  }
+
+
+  .work > img {
+    max-width: 100%;
+  }
+
+  .work h3 {
+    font-size: 28px;
+  }
+}
+
+/* For screens 986px wide and below */
+@media (max-width: 986px) {
+  header {
+    height: auto;
+    padding: 10px;
+  }
+
+  header div:nth-child(2) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+
+
+
+  main > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main > div > div:first-child {
+    text-align: center;
+  }
+  main > div > div:first-child button {
+    margin: 40px auto;
+  }
+
+
+  main > div > div:last-child {
+    border-bottom: none;
+  }
+
+  main > div > div:last-child h2 {
+    font-size: 48px;
+  }
+
+  .caption h1 {
+    font-size: 180px;
+  }
+
+  .works-heading > div:first-child {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .works-heading > div:first-child h2 {
+    font-size: 50px;
+  }
+
+  .works {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work > img {
+    max-width: 100%;
+  }
+
+  .work h3 {
+    font-size: 24px;
+  }
 }
