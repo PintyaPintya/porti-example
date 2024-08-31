@@ -33,62 +33,80 @@ header, main, section{
   padding-left: 10px;
 }
 
-header {
-  /* width: 70%; */
+header{
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+header > div{
   max-width: 1386px;
-  height: 100px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  border: 1px transparent green;
-  padding: 20px;
-  border-radius: 0 0 15px 15px;
-  background-color: white;
-  margin-bottom: 80px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1)
+  padding: 10px 0;
 }
-header img {
-  max-height: 46px;
-}
-header > img{
-  padding: 0 0 0 15px;
-}
-header div:nth-child(2){
-  margin-right: auto;
-}
-header div:nth-child(2) span{
-  margin: 0 15px;
-}
-header span{
-  display: inline-block;
-  width: 120px;
-  font-size: 13px;
-}
-header span:last-child {
-  width: 135px;
-}
-header div:last-child{
+.menu-bar {
   display: flex;
-  align-items: center;
-}
-header div:last-child img{
-  border: 5px solid black;
-  border-radius: 25px;
-}
-header div:last-child button{
-  padding: 8px 20px;
-  margin-right: 15px;
-  border-radius: 30px;
-  background-color: #85EE00;
-  border: #85EE00;
-  font-size: 14px;
+  gap: 45px;
 }
 
+.menu-item {
+  position: relative;
+  margin-right: 20px;
+}
+
+.menu-item span {
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background: white;
+  top: 195%;
+  left: 0;
+  min-width: 160px;
+  padding: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+}
+
+.dropdown a:hover {
+  background: #555;
+}
+
+.menu-item:hover .dropdown {
+  display: block;
+}
+.menu-item:hover{
+  border-bottom: 1px solid black;
+}
+.header-btns > *{
+  margin-left: 10px;
+}
+.theme-btns{
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background-color: transparent;
+  padding: 3px 4px 2px 4px;
+}
+.theme-btns > img:first-child{
+  margin-right: 5px;
+}
+header button:nth-child(2){
+  width: 40px;
+  height: 40px;
+  border: 0.5px solid #BCE70B;
+  border-radius: 6px;
+  background-color: #BCE70B;
+}
 
 
 /** main **********************************************************/
@@ -306,12 +324,10 @@ main > div > div:last-child p{
 }
 
 @media (max-width: 1200px) {
-  header {
-    padding: 15px;
+
+  .menu-bar{
     gap: 20px;
   }
-
-
 
   main > div > div:last-child h2 {
     font-size: 56px;
@@ -347,17 +363,6 @@ main > div > div:last-child p{
 
 /* For screens 986px wide and below */
 @media (max-width: 986px) {
-  header {
-    height: auto;
-    padding: 10px;
-  }
-
-  header div:nth-child(2) {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-
 
 
   main > div {
@@ -406,5 +411,14 @@ main > div > div:last-child p{
 
   .work h3 {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-bar{
+    display: none;
+  }
+  .caption h1{
+    font-size: 100px;
   }
 }
